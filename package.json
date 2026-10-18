@@ -1,36 +1,48 @@
 {
-  "name": "portfolio-yt-2.0",
+  "name": "neelesh.dev",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "next dev --webpack",
+    "build": "next build --webpack",
     "start": "next start",
-    "lint": "next lint"
+    "typecheck": "tsc --noEmit",
+    "test:e2e": "playwright test",
+    "format": "prettier --write components content pages styles tests scripts playwright.config.ts"
   },
   "dependencies": {
-    "@heroicons/react": "^2.0.12",
-    "@portabletext/react": "^1.0.6",
+    "@sanity/client": "^7",
     "@sanity/image-url": "^1.0.1",
-    "framer-motion": "^7.5.1",
-    "next": "12.3.1",
-    "next-sanity": "^1.0.3",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "react-hook-form": "^7.38.0",
-    "react-simple-typewriter": "^4.0.5",
-    "react-social-icons": "^5.15.0",
-    "tailwind-scrollbar": "^2.0.1"
+    "next": "16.4.2",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "@heroicons/react": "^2.2.0",
+    "framer-motion": "13.2.0",
+    "motion": "13.2.0",
+    "three": "0.185.1",
+    "react-hook-form": "^7.65.0",
+    "react-simple-typewriter": "^5.0.1",
+    "react-social-icons": "^6.25.0",
+    "tailwind-scrollbar": "^2.1.0"
   },
   "devDependencies": {
-    "@types/node": "18.7.20",
-    "@types/react": "18.0.21",
-    "@types/react-dom": "18.0.6",
-    "autoprefixer": "^10.4.12",
-    "eslint": "8.24.0",
-    "eslint-config-next": "12.3.1",
-    "postcss": "^8.4.17",
-    "tailwindcss": "^3.1.8",
-    "typescript": "4.8.3"
+    "@playwright/test": "^1.64.1",
+    "@types/node": "^22",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "autoprefixer": "^10.6.1",
+    "postcss": "^8.5.30",
+    "prettier": "^3.9.10",
+    "tailwindcss": "^3.4.19",
+    "typescript": "^5.9",
+    "@types/three": "0.185.4",
+    "@gltf-transform/core": "^4",
+    "@gltf-transform/extensions": "^4",
+    "@gltf-transform/functions": "^4",
+    "meshoptimizer": "^1",
+    "sharp": "^0.34"
+  },
+  "engines": {
+    "node": ">=22.12.0"
   }
 }

@@ -1,0 +1,94 @@
+.phone-hero-section {
+  height: 200vh;
+  position: relative;
+}
+.phone-hero-sticky {
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+.phone-hero-content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding: 60px 16px 24px;
+}
+.portfolio-phone {
+  max-width: 960px;
+  margin: 0 auto 18px;
+  --duo-ink: #e5e7eb;
+  --duo-paper: #292929;
+}
+.portfolio-phone .duo-device {
+  height: clamp(300px, 57vh, 680px);
+}
+.phone-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  color: #9ca3af;
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+.phone-controls .heroButton {
+  padding: 6px 15px;
+  min-width: 86px;
+}
+.phone-loading {
+  height: 57vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-direction: column;
+  color: #9ca3af;
+  font-size: 12px;
+}
+.phone-loading img {
+  height: 70%;
+  width: auto;
+  aspect-ratio: 5/7;
+  object-fit: cover;
+  border-radius: 22px;
+  border: 5px solid #484848;
+}
+.phone-hero-content .heroButton {
+  display: inline-block;
+}
+.duo-device canvas {
+  max-width: 100%;
+}
+@media (max-width: 600px) {
+  .phone-hero-content {
+    padding-top: 55px;
+  }
+  .phone-hero-content h2 {
+    font-size: 10px;
+    letter-spacing: 3px;
+  }
+  .portfolio-phone .duo-device {
+    height: 49vh;
+    min-height: 270px;
+  }
+  .phone-hero-content > .pt-4 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3px;
+  }
+  .phone-hero-content > .pt-4 .heroButton {
+    padding: 10px 12px;
+    font-size: 10px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .phone-hero-section {
+    height: 100vh;
+  }
+}

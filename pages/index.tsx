@@ -8,13 +8,8 @@ import Hero from "../components/Hero";
 import Projects from "../components/Projects";
 import Skills from "../components/Skills";
 import WorkExperience from "../components/WorkExperience";
-import { urlFor } from "../sanity";
+import { sanityClient, urlFor } from "../sanity";
 import { Experience, PageInfo, Project, Skill, Social } from "../typings";
-import { fetchExperiences } from "../utils/fetchExperiences";
-import { fetchPageInfo } from "../utils/fetchPageInfo";
-import { fetchProjects } from "../utils/fetchProjects";
-import { fetchSkills } from "../utils/fetchSkills";
-import { fetchSocials } from "../utils/fetchSocials";
 
 type Props = {
   pageInfo: PageInfo;
@@ -26,14 +21,14 @@ type Props = {
 
 const Home = ({ pageInfo, experiences, skill, projects, socials }: Props) => {
   return (
-    <div className="bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80">
+    <div id="portfolio-scroll" className="bg-[rgb(36,36,36)] text-white h-screen snap-y snap-proximity overflow-y-scroll overflow-x-hidden z-0 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80">
       <Head>
         <title>{pageInfo?.name}&apos;s Portfolio</title>
       </Head>
 
       <Header socials={socials} />
       {/* Hero */}
-      <section id="hero" className="snap-start">
+      <section id="hero" className="snap-start phone-hero-section">
         <Hero pageInfo={pageInfo} />
       </section>
       {/* About */}
@@ -73,23 +68,15 @@ const Home = ({ pageInfo, experiences, skill, projects, socials }: Props) => {
 export default Home;
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const pageInfo: PageInfo = await fetchPageInfo();
-  const experiences: Experience[] = await fetchExperiences();
-  const skill: Skill[] = await fetchSkills();
-  const projects: Project[] = await fetchProjects();
-  const socials: Social[] = await fetchSocials();
-
-  return {
-    props: {
-      pageInfo,
-      experiences,
-      skill,
-      projects,
-      socials,
-    },
-    // Next.js will attempt to re-generate the page:
-    // - When a request comes in
-    // - At most once every 10 seconds
-    revalidate: 10,
-  };
+  const props = await sanityClient
+    .withConfig({ useCdn: false, apiVersion: "2025-02-19", perspective: "published" })
+    .fetch<Props>(`{
+      "pageInfo": *[_type == "pageInfo"][0],
+      "experiences": *[_type == "experience"]{..., technologies[]->},
+      "skill": *[_type == "skill"],
+      "projects": *[_type == "project"] | order(priority asc){..., technologies[]->},
+      "socials": *[_type == "social"]
+    }`);
+  if (!props.pageInfo) throw new Error("The configured Sanity dataset has no published profile.");
+  return { props, revalidate: 60 };
 };

@@ -27,7 +27,7 @@ export default function Header({ socials }: Props) {
           />
         ))}
       </motion.div>
-      <Link href="#contact">
+      <Link href="#contact" aria-label="Get in touch">
         <motion.div
           initial={{ x: 500, opacity: 0, scale: 0.5 }}
           animate={{ x: 0, opacity: 1, scale: 1 }}
@@ -36,6 +36,8 @@ export default function Header({ socials }: Props) {
         >
           <SocialIcon
             className="cursor-pointer"
+            as="span"
+            aria-hidden="true"
             network="email"
             fgColor="gray"
             bgColor="transparent"

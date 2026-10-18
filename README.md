@@ -1,36 +1,31 @@
-## Depolyed URl - [https://portfolio-yt-2-0-neelesh0406.vercel.app/](https://portfolio-yt-2-0-neelesh0406.vercel.app/)
+# neelesh.dev
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app). Backend with Sanity.io. Tailwind CSS . Animations with Framer Motion.
+Original portfolio design, with a scroll-controlled iPhone Duo hero and Neelesh’s portrait. The rest of the original sections and layout are retained.
 
-## Getting Started
+## Local preview
 
-First, run the development server:
+Node 22.12+.
 
-```bash
+```sh
+npm ci
 npm run dev
-# or
-yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000. `npm run typecheck` and `npm run build` validate the source. The home page reads published content from the public `portfolio_v2` Sanity dataset and revalidates every 60 seconds. Copy `.env.example` to `.env.local` for local configuration. The original `production` dataset and legacy Studio configuration remain unchanged. A write token is needed only for content-management scripts; keep it in `.env.local`, never in public environment variables.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## Hero
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+- `components/Hero.tsx`: original typography, yellow accents, background circles, typewriter and navigation; phone replaces the circular hero image.
+- `components/PhoneHero.tsx`: maps the existing page scroll container to the phone’s fold progress. Click/drag and a keyboard-accessible toggle also work.
+- `components/iphone-duo/`: source adapted from https://github.com/jal-co/iphone-duo (MIT notices and third-party asset notes included).
+- `public/models/iphone-duo.glb`: optimized reference model, reduced from 15,137,168 to 3,568,160 bytes with deduplicated textures, WebP and Meshopt. Geometry hierarchy and named hinge/screen materials preserved.
+- `public/phone/portrait.webp`: supplied portrait converted to a web texture, without embedded photo metadata.
+- `public/phone/inside.svg`: portrait and personal introduction shown inside the open phone.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+The phone is client-loaded independently of the rest of the page. Reduced-motion users get an open device. Model optimization can be reproduced with `node scripts/optimize-phone.mjs /path/to/original/iphone-duo.glb`.
 
-## Learn More
+## Status
 
-To learn more about Next.js, take a look at the following resources:
+GitHub repository: https://github.com/neelesh0406/neelesh.dev. Local folder and Git remote retain the old name because permission to update `.git/config` was declined. No implementation changes have been pushed or deployed.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+The earlier broad redesign was rejected and restored to the original design. This checkpoint includes the hero, supporting data/build setup, isolated Sanity dataset integration, and image sizing and header hydration fixes. Browser smoke test: `npm run test:e2e` with a server running on port 3000 and Google Chrome installed.

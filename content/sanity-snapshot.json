@@ -1,0 +1,801 @@
+{
+  "pageInfo": {
+    "_createdAt": "2022-10-26T14:56:05Z",
+    "_id": "0991c727-bee9-425e-b3a9-0b7ff74c2d7d",
+    "_rev": "PzCUy7aXGOBcVeZr8EhDCR",
+    "_type": "pageInfo",
+    "_updatedAt": "2022-11-02T08:28:53Z",
+    "address": "Indore, India",
+    "backgroundInformation": "Hi, my name's Neelesh \u2764\ufe0f and I love to travel (who doesn't !). I am also fond of reading books from the past 6 years. I chose my career in IT as a web developer and primarily work on Frontend Technologies - React.js.",
+    "email": "neeleshchandwani@gmail.com",
+    "heroImage": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-6ae10d1e2b8c3e51f0f64580a4a94d2327c9fa0d-1828x1828-jpg",
+        "_type": "reference"
+      }
+    },
+    "name": "Neelesh Chandwani",
+    "phoneNumber": "+91 9406984",
+    "profilePic": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-0ca9d28f708c3133548e5d430ae5054cebb28ce9-3000x4000-jpg",
+        "_type": "reference"
+      },
+      "crop": {
+        "_type": "sanity.imageCrop",
+        "bottom": 0,
+        "left": 0,
+        "right": 0,
+        "top": 0.24010791366906512
+      },
+      "hotspot": {
+        "_type": "sanity.imageHotspot",
+        "height": 0.7598920863309349,
+        "width": 1,
+        "x": 0.5,
+        "y": 0.6200539568345326
+      }
+    },
+    "role": "Frontend Developer",
+    "socials": [
+      {
+        "_key": "01b1ec48531b",
+        "_ref": "c35f32f8-f48b-47a7-b4b7-025d629bfd36",
+        "_type": "reference"
+      },
+      {
+        "_key": "74ea1eeebb51",
+        "_ref": "4536b3c2-b493-4444-9d49-6ba0c1a00aa1",
+        "_type": "reference"
+      },
+      {
+        "_key": "f506450d1c91",
+        "_ref": "387e9364-890a-48f5-8c34-1c618f59d2f7",
+        "_type": "reference"
+      }
+    ]
+  },
+  "experiences": [
+    {
+      "_createdAt": "2022-10-28T17:42:16Z",
+      "_id": "8a2a7d66-8f03-40ac-b807-c2e3a71b7879",
+      "_rev": "ljmjoOAHhDl0Kc3X8UKGP7",
+      "_type": "experience",
+      "_updatedAt": "2022-10-30T10:20:25Z",
+      "company": "Impetus Technologies India Pvt. Ltd.",
+      "companyImage": {
+        "_type": "image",
+        "asset": {
+          "_ref": "image-5075a64a477bb52220e947d524c08a5d727125eb-200x200-jpg",
+          "_type": "reference"
+        }
+      },
+      "dateStarted": "2022-01-03",
+      "isCurrentlyWorkingHere": true,
+      "jobTitle": "UI Engineer",
+      "points": [
+        "Creating SPA from scratch for a US banking client.",
+        "Centralised Data Quality Management Tool for all the teams of Bank Of America.",
+        "USP of the App: Created a chart with drag and drop feature where columns from tables and rules can be mapped in a complex structure in real-time. Create rulesets from a set of rules and show on map etc.",
+        "Singlehandedly provided complex data to JSON structure manipulation."
+      ],
+      "technologies": [
+        {
+          "_createdAt": "2022-10-28T17:38:29Z",
+          "_id": "1d499936-5993-4dc1-93cb-1b78ca3781ba",
+          "_rev": "ljmjoOAHhDl0Kc3X8UUCTY",
+          "_type": "skill",
+          "_updatedAt": "2022-10-30T10:54:23Z",
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-45c7b8345cbf35abd1e4216bda5c0e9e6bee66f4-500x500-png",
+              "_type": "reference"
+            }
+          },
+          "progress": 75,
+          "title": "Reactjs"
+        },
+        {
+          "_createdAt": "2022-10-28T17:39:00Z",
+          "_id": "b68b8780-99d7-4410-9b24-2cd583f18b96",
+          "_rev": "7wudp1wGdqiBrFE2HClCRb",
+          "_type": "skill",
+          "_updatedAt": "2022-10-29T13:18:02Z",
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-48bd0fc0a6e47c2f9d27059e43426574e6a118b1-908x762-png",
+              "_type": "reference"
+            }
+          },
+          "progress": 60,
+          "title": "Redux"
+        },
+        {
+          "_createdAt": "2022-10-28T17:40:27Z",
+          "_id": "76e5c7ab-efa3-4abf-9e9c-deb326c5dffe",
+          "_rev": "ljmjoOAHhDl0Kc3X8OCdi2",
+          "_type": "skill",
+          "_updatedAt": "2022-10-29T13:20:22Z",
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-a7065525b633371de09d6e8e002b83aa19e2b408-640x640-png",
+              "_type": "reference"
+            }
+          },
+          "progress": 80,
+          "title": "HTML"
+        },
+        {
+          "_createdAt": "2022-10-28T17:40:57Z",
+          "_id": "f978a8bc-f4c7-4beb-9dc3-e1cac36038de",
+          "_rev": "ljmjoOAHhDl0Kc3X8OCjFs",
+          "_type": "skill",
+          "_updatedAt": "2022-10-29T13:20:36Z",
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-10adb03ece1e711355c497440569eada85570ed2-640x640-png",
+              "_type": "reference"
+            }
+          },
+          "progress": 80,
+          "title": "CSS"
+        },
+        {
+          "_createdAt": "2022-10-28T17:41:49Z",
+          "_id": "fa922c3e-6566-4e11-a76a-65595700d84b",
+          "_rev": "04gQP5yjAo50RTbKDbRmYh",
+          "_type": "skill",
+          "_updatedAt": "2022-10-29T13:20:07Z",
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-bf4201bd1ad0e88cb9377a1c900ee1488514871b-1070x892-png",
+              "_type": "reference"
+            }
+          },
+          "progress": 70,
+          "title": "ReactFlow"
+        }
+      ]
+    },
+    {
+      "_createdAt": "2022-10-28T15:22:10Z",
+      "_id": "da960ffe-33bf-4758-90d3-506b9163f473",
+      "_rev": "ljmjoOAHhDl0Kc3X8Vy5tt",
+      "_type": "experience",
+      "_updatedAt": "2022-10-30T16:02:11Z",
+      "company": "Cognizant Technology Solutions",
+      "companyImage": {
+        "_type": "image",
+        "asset": {
+          "_ref": "image-68e8908aa475a7d15143bc8573c0c31812168fe2-1200x627-jpg",
+          "_type": "reference"
+        },
+        "crop": {
+          "_type": "sanity.imageCrop",
+          "bottom": 0,
+          "left": 0.21062618595825422,
+          "right": 0.21442125237191567,
+          "top": 0
+        },
+        "hotspot": {
+          "_type": "sanity.imageHotspot",
+          "height": 0.9927297578282333,
+          "width": 0.57495256166983,
+          "x": 0.4981024667931692,
+          "y": 0.5036351210858834
+        }
+      },
+      "dateEnded": "2021-12-31",
+      "dateStarted": "2020-01-29",
+      "isCurrentlyWorkingHere": false,
+      "jobTitle": "Programmer Analyst",
+      "points": [
+        "Worked on multiple projects and enhanced SPAs for US clients including a Veterinary Hospital Chain",
+        "Enhancements on Employee Management Automation system for MARS",
+        "Created few REST Apis using Node js and Express js"
+      ],
+      "technologies": [
+        {
+          "_createdAt": "2022-10-28T17:38:29Z",
+          "_id": "1d499936-5993-4dc1-93cb-1b78ca3781ba",
+          "_rev": "ljmjoOAHhDl0Kc3X8UUCTY",
+          "_type": "skill",
+          "_updatedAt": "2022-10-30T10:54:23Z",
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-45c7b8345cbf35abd1e4216bda5c0e9e6bee66f4-500x500-png",
+              "_type": "reference"
+            }
+          },
+          "progress": 75,
+          "title": "Reactjs"
+        },
+        {
+          "_createdAt": "2022-10-28T17:40:27Z",
+          "_id": "76e5c7ab-efa3-4abf-9e9c-deb326c5dffe",
+          "_rev": "ljmjoOAHhDl0Kc3X8OCdi2",
+          "_type": "skill",
+          "_updatedAt": "2022-10-29T13:20:22Z",
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-a7065525b633371de09d6e8e002b83aa19e2b408-640x640-png",
+              "_type": "reference"
+            }
+          },
+          "progress": 80,
+          "title": "HTML"
+        },
+        {
+          "_createdAt": "2022-10-28T17:40:57Z",
+          "_id": "f978a8bc-f4c7-4beb-9dc3-e1cac36038de",
+          "_rev": "ljmjoOAHhDl0Kc3X8OCjFs",
+          "_type": "skill",
+          "_updatedAt": "2022-10-29T13:20:36Z",
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-10adb03ece1e711355c497440569eada85570ed2-640x640-png",
+              "_type": "reference"
+            }
+          },
+          "progress": 80,
+          "title": "CSS"
+        },
+        {
+          "_createdAt": "2022-10-28T17:39:00Z",
+          "_id": "b68b8780-99d7-4410-9b24-2cd583f18b96",
+          "_rev": "7wudp1wGdqiBrFE2HClCRb",
+          "_type": "skill",
+          "_updatedAt": "2022-10-29T13:18:02Z",
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-48bd0fc0a6e47c2f9d27059e43426574e6a118b1-908x762-png",
+              "_type": "reference"
+            }
+          },
+          "progress": 60,
+          "title": "Redux"
+        },
+        {
+          "_createdAt": "2022-10-28T17:53:23Z",
+          "_id": "99c87f2f-c32a-4025-8e84-12f8ad383466",
+          "_rev": "ljmjoOAHhDl0Kc3X8UTv1T",
+          "_type": "skill",
+          "_updatedAt": "2022-10-30T10:52:47Z",
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-57ebfa0e4cebec507c78e7e5607d334c6134532a-700x648-png",
+              "_type": "reference"
+            }
+          },
+          "progress": 30,
+          "title": "Nodejs"
+        }
+      ]
+    }
+  ],
+  "skill": [
+    {
+      "_createdAt": "2022-10-28T17:38:29Z",
+      "_id": "1d499936-5993-4dc1-93cb-1b78ca3781ba",
+      "_rev": "ljmjoOAHhDl0Kc3X8UUCTY",
+      "_type": "skill",
+      "_updatedAt": "2022-10-30T10:54:23Z",
+      "image": {
+        "_type": "image",
+        "asset": {
+          "_ref": "image-45c7b8345cbf35abd1e4216bda5c0e9e6bee66f4-500x500-png",
+          "_type": "reference"
+        }
+      },
+      "progress": 75,
+      "title": "Reactjs"
+    },
+    {
+      "_createdAt": "2022-11-01T08:51:36Z",
+      "_id": "254a7a02-0d08-4787-bc3a-7b248eea5983",
+      "_rev": "uEWLL17HIfNmNEvLC254DD",
+      "_type": "skill",
+      "_updatedAt": "2022-11-01T08:51:36Z",
+      "image": {
+        "_type": "image",
+        "asset": {
+          "_ref": "image-4f0e11b25a9b8169fce3e87031720f1fda99672c-1080x1080-png",
+          "_type": "reference"
+        }
+      },
+      "progress": 20,
+      "title": "Sanity"
+    },
+    {
+      "_createdAt": "2022-10-28T17:39:26Z",
+      "_id": "57d4500c-0937-498a-adb4-3c01fe08afe3",
+      "_rev": "ljmjoOAHhDl0Kc3X8OCmcs",
+      "_type": "skill",
+      "_updatedAt": "2022-10-29T13:20:46Z",
+      "image": {
+        "_type": "image",
+        "asset": {
+          "_ref": "image-4e06deb54ac04e3ab87ac2ff461898c46f836451-256x256-svg",
+          "_type": "reference"
+        }
+      },
+      "progress": 30,
+      "title": "Nextjs"
+    },
+    {
+      "_createdAt": "2022-10-28T17:40:27Z",
+      "_id": "76e5c7ab-efa3-4abf-9e9c-deb326c5dffe",
+      "_rev": "ljmjoOAHhDl0Kc3X8OCdi2",
+      "_type": "skill",
+      "_updatedAt": "2022-10-29T13:20:22Z",
+      "image": {
+        "_type": "image",
+        "asset": {
+          "_ref": "image-a7065525b633371de09d6e8e002b83aa19e2b408-640x640-png",
+          "_type": "reference"
+        }
+      },
+      "progress": 80,
+      "title": "HTML"
+    },
+    {
+      "_createdAt": "2022-10-28T17:53:23Z",
+      "_id": "99c87f2f-c32a-4025-8e84-12f8ad383466",
+      "_rev": "ljmjoOAHhDl0Kc3X8UTv1T",
+      "_type": "skill",
+      "_updatedAt": "2022-10-30T10:52:47Z",
+      "image": {
+        "_type": "image",
+        "asset": {
+          "_ref": "image-57ebfa0e4cebec507c78e7e5607d334c6134532a-700x648-png",
+          "_type": "reference"
+        }
+      },
+      "progress": 30,
+      "title": "Nodejs"
+    },
+    {
+      "_createdAt": "2022-10-30T10:56:41Z",
+      "_id": "a1372989-2cd7-4785-94f6-a77092e22f5b",
+      "_rev": "ljmjoOAHhDl0Kc3X8UUbK5",
+      "_type": "skill",
+      "_updatedAt": "2022-10-30T10:56:41Z",
+      "image": {
+        "_type": "image",
+        "asset": {
+          "_ref": "image-82a5b8635eb9f60ed86de4c2aa654bbdf550693f-4096x4096-png",
+          "_type": "reference"
+        }
+      },
+      "progress": 60,
+      "title": "JavaScript"
+    },
+    {
+      "_createdAt": "2022-10-31T14:03:00Z",
+      "_id": "af5aaa1b-ffef-4015-972c-18dd02aea4e8",
+      "_rev": "bqdICm21keAUgxdLy3qoAR",
+      "_type": "skill",
+      "_updatedAt": "2022-10-31T14:03:00Z",
+      "image": {
+        "_type": "image",
+        "asset": {
+          "_ref": "image-4f25945a33da5fec44768b2fb1c85b03413d3607-1080x1080-webp",
+          "_type": "reference"
+        }
+      },
+      "progress": 30,
+      "title": "TailwindCss"
+    },
+    {
+      "_createdAt": "2022-10-28T17:39:00Z",
+      "_id": "b68b8780-99d7-4410-9b24-2cd583f18b96",
+      "_rev": "7wudp1wGdqiBrFE2HClCRb",
+      "_type": "skill",
+      "_updatedAt": "2022-10-29T13:18:02Z",
+      "image": {
+        "_type": "image",
+        "asset": {
+          "_ref": "image-48bd0fc0a6e47c2f9d27059e43426574e6a118b1-908x762-png",
+          "_type": "reference"
+        }
+      },
+      "progress": 60,
+      "title": "Redux"
+    },
+    {
+      "_createdAt": "2022-11-02T08:34:52Z",
+      "_id": "f4aa3461-5ccb-4f30-aa35-e2420d5e91e4",
+      "_rev": "PzCUy7aXGOBcVeZr8EiZkA",
+      "_type": "skill",
+      "_updatedAt": "2022-11-02T08:34:52Z",
+      "image": {
+        "_type": "image",
+        "asset": {
+          "_ref": "image-d630d410cf2277696c6489eedb49b51bfd72c2fb-360x360-png",
+          "_type": "reference"
+        }
+      },
+      "progress": 30,
+      "title": "MongoDb"
+    },
+    {
+      "_createdAt": "2022-10-28T17:40:57Z",
+      "_id": "f978a8bc-f4c7-4beb-9dc3-e1cac36038de",
+      "_rev": "ljmjoOAHhDl0Kc3X8OCjFs",
+      "_type": "skill",
+      "_updatedAt": "2022-10-29T13:20:36Z",
+      "image": {
+        "_type": "image",
+        "asset": {
+          "_ref": "image-10adb03ece1e711355c497440569eada85570ed2-640x640-png",
+          "_type": "reference"
+        }
+      },
+      "progress": 80,
+      "title": "CSS"
+    },
+    {
+      "_createdAt": "2022-10-28T17:41:49Z",
+      "_id": "fa922c3e-6566-4e11-a76a-65595700d84b",
+      "_rev": "04gQP5yjAo50RTbKDbRmYh",
+      "_type": "skill",
+      "_updatedAt": "2022-10-29T13:20:07Z",
+      "image": {
+        "_type": "image",
+        "asset": {
+          "_ref": "image-bf4201bd1ad0e88cb9377a1c900ee1488514871b-1070x892-png",
+          "_type": "reference"
+        }
+      },
+      "progress": 70,
+      "title": "ReactFlow"
+    }
+  ],
+  "projects": [
+    {
+      "_createdAt": "2022-10-28T17:57:52Z",
+      "_id": "daf842af-d867-4b10-96b9-f63e2cb1d8d4",
+      "_rev": "ixnB1ROL0qA2juoAmkhEJE",
+      "_type": "project",
+      "_updatedAt": "2022-11-02T08:27:29Z",
+      "image": {
+        "_type": "image",
+        "asset": {
+          "_ref": "image-b78109de7542ca7ddb8b8bf6bf0480d4acb165ee-2560x1600-png",
+          "_type": "reference"
+        }
+      },
+      "linkToBuild": "https://react-codeial.herokuapp.com/",
+      "priority": 1,
+      "summary": "Authentication token for Sign In / Sign Up users. Create , Add posts to the feed. Like and comment on post. Edit profile name and password. Add / remove friends",
+      "technologies": [
+        {
+          "_createdAt": "2022-10-28T17:38:29Z",
+          "_id": "1d499936-5993-4dc1-93cb-1b78ca3781ba",
+          "_rev": "ljmjoOAHhDl0Kc3X8UUCTY",
+          "_type": "skill",
+          "_updatedAt": "2022-10-30T10:54:23Z",
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-45c7b8345cbf35abd1e4216bda5c0e9e6bee66f4-500x500-png",
+              "_type": "reference"
+            }
+          },
+          "progress": 75,
+          "title": "Reactjs"
+        },
+        {
+          "_createdAt": "2022-10-28T17:40:27Z",
+          "_id": "76e5c7ab-efa3-4abf-9e9c-deb326c5dffe",
+          "_rev": "ljmjoOAHhDl0Kc3X8OCdi2",
+          "_type": "skill",
+          "_updatedAt": "2022-10-29T13:20:22Z",
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-a7065525b633371de09d6e8e002b83aa19e2b408-640x640-png",
+              "_type": "reference"
+            }
+          },
+          "progress": 80,
+          "title": "HTML"
+        },
+        {
+          "_createdAt": "2022-10-28T17:39:00Z",
+          "_id": "b68b8780-99d7-4410-9b24-2cd583f18b96",
+          "_rev": "7wudp1wGdqiBrFE2HClCRb",
+          "_type": "skill",
+          "_updatedAt": "2022-10-29T13:18:02Z",
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-48bd0fc0a6e47c2f9d27059e43426574e6a118b1-908x762-png",
+              "_type": "reference"
+            }
+          },
+          "progress": 60,
+          "title": "Redux"
+        },
+        {
+          "_createdAt": "2022-10-28T17:40:57Z",
+          "_id": "f978a8bc-f4c7-4beb-9dc3-e1cac36038de",
+          "_rev": "ljmjoOAHhDl0Kc3X8OCjFs",
+          "_type": "skill",
+          "_updatedAt": "2022-10-29T13:20:36Z",
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-10adb03ece1e711355c497440569eada85570ed2-640x640-png",
+              "_type": "reference"
+            }
+          },
+          "progress": 80,
+          "title": "CSS"
+        }
+      ],
+      "title": "Social Media React web app"
+    },
+    {
+      "_createdAt": "2022-10-31T14:21:34Z",
+      "_id": "843be833-4cda-4edc-805d-7868722d4f48",
+      "_rev": "PzCUy7aXGOBcVeZr8Eg2ZP",
+      "_type": "project",
+      "_updatedAt": "2022-11-02T08:22:43Z",
+      "image": {
+        "_type": "image",
+        "asset": {
+          "_ref": "image-b3f6eb070440f94d1c177a5e4630deecc5253c3d-1918x1104-png",
+          "_type": "reference"
+        }
+      },
+      "linkToBuild": "https://portfolio-yt-2-0-delta.vercel.app/",
+      "priority": 2,
+      "summary": "Modern Responsive Portfolio made with Next.js, Tailwind css, Framer Motion, Sanity (for backend).",
+      "technologies": [
+        {
+          "_createdAt": "2022-10-28T17:39:26Z",
+          "_id": "57d4500c-0937-498a-adb4-3c01fe08afe3",
+          "_rev": "ljmjoOAHhDl0Kc3X8OCmcs",
+          "_type": "skill",
+          "_updatedAt": "2022-10-29T13:20:46Z",
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-4e06deb54ac04e3ab87ac2ff461898c46f836451-256x256-svg",
+              "_type": "reference"
+            }
+          },
+          "progress": 30,
+          "title": "Nextjs"
+        },
+        {
+          "_createdAt": "2022-10-31T14:03:00Z",
+          "_id": "af5aaa1b-ffef-4015-972c-18dd02aea4e8",
+          "_rev": "bqdICm21keAUgxdLy3qoAR",
+          "_type": "skill",
+          "_updatedAt": "2022-10-31T14:03:00Z",
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-4f25945a33da5fec44768b2fb1c85b03413d3607-1080x1080-webp",
+              "_type": "reference"
+            }
+          },
+          "progress": 30,
+          "title": "TailwindCss"
+        },
+        {
+          "_createdAt": "2022-11-01T08:51:36Z",
+          "_id": "254a7a02-0d08-4787-bc3a-7b248eea5983",
+          "_rev": "uEWLL17HIfNmNEvLC254DD",
+          "_type": "skill",
+          "_updatedAt": "2022-11-01T08:51:36Z",
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-4f0e11b25a9b8169fce3e87031720f1fda99672c-1080x1080-png",
+              "_type": "reference"
+            }
+          },
+          "progress": 20,
+          "title": "Sanity"
+        }
+      ],
+      "title": "Portfolio - Next.js, Tailwind css, Sanity"
+    },
+    {
+      "_createdAt": "2022-11-02T08:42:43Z",
+      "_id": "998188b7-d1f0-4b61-82b5-1a06c79a7666",
+      "_rev": "2z9udyqS0BGVosenMRwePl",
+      "_type": "project",
+      "_updatedAt": "2022-11-02T08:42:43Z",
+      "image": {
+        "_type": "image",
+        "asset": {
+          "_ref": "image-486af5586b5424b26bfb91d7fa50a74d32c200f3-1800x760-png",
+          "_type": "reference"
+        }
+      },
+      "linkToBuild": "https://neelesh0406.github.io/textUtils-react/",
+      "priority": 3,
+      "summary": "Responsive Frontend app made with React. Features - Text conversion, Light/Dark mode, Different color schemes to choose from, live preview of converted text.",
+      "technologies": [
+        {
+          "_createdAt": "2022-10-28T17:38:29Z",
+          "_id": "1d499936-5993-4dc1-93cb-1b78ca3781ba",
+          "_rev": "ljmjoOAHhDl0Kc3X8UUCTY",
+          "_type": "skill",
+          "_updatedAt": "2022-10-30T10:54:23Z",
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-45c7b8345cbf35abd1e4216bda5c0e9e6bee66f4-500x500-png",
+              "_type": "reference"
+            }
+          },
+          "progress": 75,
+          "title": "Reactjs"
+        },
+        {
+          "_createdAt": "2022-10-30T10:56:41Z",
+          "_id": "a1372989-2cd7-4785-94f6-a77092e22f5b",
+          "_rev": "ljmjoOAHhDl0Kc3X8UUbK5",
+          "_type": "skill",
+          "_updatedAt": "2022-10-30T10:56:41Z",
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-82a5b8635eb9f60ed86de4c2aa654bbdf550693f-4096x4096-png",
+              "_type": "reference"
+            }
+          },
+          "progress": 60,
+          "title": "JavaScript"
+        },
+        {
+          "_createdAt": "2022-10-28T17:40:57Z",
+          "_id": "f978a8bc-f4c7-4beb-9dc3-e1cac36038de",
+          "_rev": "ljmjoOAHhDl0Kc3X8OCjFs",
+          "_type": "skill",
+          "_updatedAt": "2022-10-29T13:20:36Z",
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-10adb03ece1e711355c497440569eada85570ed2-640x640-png",
+              "_type": "reference"
+            }
+          },
+          "progress": 80,
+          "title": "CSS"
+        }
+      ],
+      "title": "Text Utils - Word counter | Text Converter"
+    },
+    {
+      "_createdAt": "2022-11-02T08:37:09Z",
+      "_id": "445f4d37-9cda-4546-b1ba-982c074c6e84",
+      "_rev": "ixnB1ROL0qA2juoAmkjuR9",
+      "_type": "project",
+      "_updatedAt": "2022-11-02T08:47:07Z",
+      "image": {
+        "_type": "image",
+        "asset": {
+          "_ref": "image-8be93ceaaefbc60daaa66189572cdc8e97635f91-1280x960-jpg",
+          "_type": "reference"
+        }
+      },
+      "linkToBuild": "https://github.com/neelesh0406/ecommerce-mern",
+      "priority": 4,
+      "summary": "E-commerce shopping web app made with MERN stack. Fully functional site with cart, products, proceed to checkout etc. Link to Git Hub attached. \nAuthentication also implemented for users.",
+      "technologies": [
+        {
+          "_createdAt": "2022-11-02T08:34:52Z",
+          "_id": "f4aa3461-5ccb-4f30-aa35-e2420d5e91e4",
+          "_rev": "PzCUy7aXGOBcVeZr8EiZkA",
+          "_type": "skill",
+          "_updatedAt": "2022-11-02T08:34:52Z",
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-d630d410cf2277696c6489eedb49b51bfd72c2fb-360x360-png",
+              "_type": "reference"
+            }
+          },
+          "progress": 30,
+          "title": "MongoDb"
+        },
+        {
+          "_createdAt": "2022-10-28T17:38:29Z",
+          "_id": "1d499936-5993-4dc1-93cb-1b78ca3781ba",
+          "_rev": "ljmjoOAHhDl0Kc3X8UUCTY",
+          "_type": "skill",
+          "_updatedAt": "2022-10-30T10:54:23Z",
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-45c7b8345cbf35abd1e4216bda5c0e9e6bee66f4-500x500-png",
+              "_type": "reference"
+            }
+          },
+          "progress": 75,
+          "title": "Reactjs"
+        },
+        {
+          "_createdAt": "2022-10-28T17:53:23Z",
+          "_id": "99c87f2f-c32a-4025-8e84-12f8ad383466",
+          "_rev": "ljmjoOAHhDl0Kc3X8UTv1T",
+          "_type": "skill",
+          "_updatedAt": "2022-10-30T10:52:47Z",
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-57ebfa0e4cebec507c78e7e5607d334c6134532a-700x648-png",
+              "_type": "reference"
+            }
+          },
+          "progress": 30,
+          "title": "Nodejs"
+        },
+        {
+          "_createdAt": "2022-10-28T17:40:57Z",
+          "_id": "f978a8bc-f4c7-4beb-9dc3-e1cac36038de",
+          "_rev": "ljmjoOAHhDl0Kc3X8OCjFs",
+          "_type": "skill",
+          "_updatedAt": "2022-10-29T13:20:36Z",
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_ref": "image-10adb03ece1e711355c497440569eada85570ed2-640x640-png",
+              "_type": "reference"
+            }
+          },
+          "progress": 80,
+          "title": "CSS"
+        }
+      ],
+      "title": "E-Commerce Full Stack Mern"
+    }
+  ],
+  "socials": [
+    {
+      "_createdAt": "2022-10-26T16:12:35Z",
+      "_id": "387e9364-890a-48f5-8c34-1c618f59d2f7",
+      "_rev": "7wudp1wGdqiBrFE2HDEI1N",
+      "_type": "social",
+      "_updatedAt": "2022-10-29T14:24:58Z",
+      "title": "github",
+      "url": "https://github.com/neelesh0406"
+    },
+    {
+      "_createdAt": "2022-10-26T16:11:55Z",
+      "_id": "4536b3c2-b493-4444-9d49-6ba0c1a00aa1",
+      "_rev": "ljmjoOAHhDl0Kc3X8OW40y",
+      "_type": "social",
+      "_updatedAt": "2022-10-29T14:25:06Z",
+      "title": "linkedin",
+      "url": "https://www.linkedin.com/in/neelesh-chandwani-28b7971a0"
+    },
+    {
+      "_createdAt": "2022-10-26T16:12:55Z",
+      "_id": "c35f32f8-f48b-47a7-b4b7-025d629bfd36",
+      "_rev": "ljmjoOAHhDl0Kc3X8OVzm2",
+      "_type": "social",
+      "_updatedAt": "2022-10-29T14:24:46Z",
+      "title": "instagram",
+      "url": "https://instagram.com/neeleshx"
+    }
+  ]
+}

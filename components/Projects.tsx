@@ -21,15 +21,15 @@ export default function Projects({ projects }: Props) {
             key={i}
             className="w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-16 md:p-30 xl:p-44 h-screen"
           >
-            <Link href={project?.linkToBuild}>
+            <Link href={project?.linkToBuild} className="block w-full max-w-3xl h-[28vh] md:h-[34vh] flex-shrink-0">
               <motion.img
                 initial={{ y: -300, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 transition={{ duration: 1.2 }}
                 // viewport={{ once: true }}
-                src={urlFor(project?.image).url()}
-                alt=""
-                className="max-h-[50%] md:max-h-[60%] xl:max-h-[55%] cursor-pointer hover:grayscale"
+                src={urlFor(project.image).width(1400).fit("max").auto("format").url()}
+                alt={`${project.title} preview`}
+                className="h-full w-full object-contain cursor-pointer hover:grayscale"
               />
             </Link>
             <div className="space-y-5 md:space-y-10 px-0 md:px-10 max-w-6xl">
@@ -45,7 +45,8 @@ export default function Projects({ projects }: Props) {
               <div className="flex items-center space-x-2 justify-center">
                 {project?.technologies?.map((technology) => (
                   <img
-                    className="h-10 w-10"
+                    className="h-10 w-10 flex-shrink-0 object-contain"
+                    alt={technology.title}
                     key={technology._id}
                     src={urlFor(technology.image).url()}
                   />

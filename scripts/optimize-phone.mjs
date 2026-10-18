@@ -1,0 +1,14 @@
+import { NodeIO, PropertyType } from '@gltf-transform/core';
+import { ALL_EXTENSIONS } from '@gltf-transform/extensions';
+import { dedup, textureCompress, meshopt } from '@gltf-transform/functions';
+import { MeshoptEncoder } from 'meshoptimizer';
+import sharp from 'sharp';
+import { stat } from 'node:fs/promises';
+const input=process.argv[2], output='public/models/iphone-duo.glb';
+await MeshoptEncoder.ready;
+const io=new NodeIO().registerExtensions(ALL_EXTENSIONS).registerDependencies({'meshopt.encoder':MeshoptEncoder});
+const doc=await io.read(input);
+await doc.transform(dedup({propertyTypes:[PropertyType.TEXTURE,PropertyType.ACCESSOR]}),textureCompress({encoder:sharp,targetFormat:'webp',resize:[1024,1024]}),meshopt({encoder:MeshoptEncoder,level:'medium'}));
+if(!doc.getRoot().listNodes().some(n=>n.getName()==='folding-half'))throw new Error('Missing hinge');
+for(const name of ['inner-screen','cover-screen'])if(!doc.getRoot().listMaterials().some(m=>m.getName()===name))throw new Error('Missing '+name);
+await io.write(output,doc);console.log({before:(await stat(input)).size,after:(await stat(output)).size});
