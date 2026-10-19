@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type PointerEvent } from "react";
 import { Experience } from "../typings";
 import { urlFor } from "../sanity";
 
@@ -17,7 +17,10 @@ export default function WorkExperience({ experiences }: { experiences: Experienc
   const stage = useRef<HTMLDivElement>(null);
   const dialog = useRef<HTMLDialogElement>(null);
   const trigger = useRef<HTMLElement | null>(null);
-  const gesture = useRef({ x: 0, y: 0, position: 0, down: false, dragged: false });
+  const gesture = useRef({ x: 0, y: 0, position: 0, current: 0, down: false, dragged: false, axis: "" });
+  const [dragging, setDragging] = useState(false);
+  const scrollPosition = useRef(0);
+  const manualOffset = useRef(0);
   const last = Math.max(0, items.length - 1);
   const active = Math.round(position);
 
@@ -30,7 +33,8 @@ export default function WorkExperience({ experiences }: { experiences: Experienc
       frame = 0;
       const offset = root.getBoundingClientRect().top - section.getBoundingClientRect().top;
       const travel = Math.max(1, section.offsetHeight - root.clientHeight);
-      setPosition(clamp(offset / travel, 1) * last);
+      scrollPosition.current = clamp(offset / travel, 1) * last;
+      if (gesture.current.axis !== "x") setPosition(clamp(scrollPosition.current + manualOffset.current, last));
     };
     const schedule = () => { if (!frame) frame = requestAnimationFrame(update); };
     const observer = new IntersectionObserver(([entry]) => {
@@ -55,12 +59,18 @@ export default function WorkExperience({ experiences }: { experiences: Experienc
   const goTo = (index: number) => {
     const next = clamp(index, last);
     setPosition(next);
-    const root = document.getElementById("portfolio-scroll");
-    const section = document.getElementById("experience");
-    if (!root || !section || !last) return;
-    const top = root.scrollTop + section.getBoundingClientRect().top - root.getBoundingClientRect().top;
-    root.scrollTo({ top: top + (section.offsetHeight - root.clientHeight) * next / last, behavior: "auto" });
+    manualOffset.current = next - scrollPosition.current;
   };
+  const finishDrag = (event: PointerEvent<HTMLDivElement>) => {
+    const g = gesture.current;
+    if (!g.down) return;
+    g.down = false;
+    if (g.dragged) goTo(Math.round(g.current));
+    g.axis = "";
+    setDragging(false);
+    if (event.currentTarget.hasPointerCapture(event.pointerId)) event.currentTarget.releasePointerCapture(event.pointerId);
+  };
+
   const close = () => { dialog.current?.close(); setSelected(null); };
 
   return <div className="experience-sticky">
@@ -69,13 +79,28 @@ export default function WorkExperience({ experiences }: { experiences: Experienc
       <h2>Teams I’ve built with.</h2>
       <p>A few chapters of my engineering journey.</p>
     </div>
-    <div ref={stage} className={`experience-stage ${introduced ? "experience-introduced" : ""}`} role="region" aria-label="Career carousel"
+    <div ref={stage} className={`experience-stage ${introduced ? "experience-introduced" : ""}`} role="region" aria-label="Career carousel" data-dragging={dragging}
       onKeyDown={event => { if (event.key === "ArrowRight" || event.key === "ArrowLeft") { event.preventDefault(); goTo(active + (event.key === "ArrowRight" ? 1 : -1)); } }}
-      onPointerDown={event => { gesture.current = { x: event.clientX, y: event.clientY, position, down: true, dragged: false }; }}
-      onPointerMove={event => { const g = gesture.current; if (!g.down) return; const dx = event.clientX - g.x; if (Math.abs(dx) > 12 && Math.abs(dx) > Math.abs(event.clientY - g.y)) { g.dragged = true; setPosition(clamp(g.position - dx / 240, last)); } }}
-      onPointerUp={() => { const g = gesture.current; g.down = false; if (g.dragged) goTo(Math.round(position)); }}
-      onPointerLeave={() => { if (gesture.current.down && gesture.current.dragged) goTo(Math.round(position)); gesture.current.down = false; }}
-      onPointerCancel={() => { gesture.current.down = false; }}>
+      onPointerDown={event => {
+        if (!event.isPrimary || event.button !== 0) return;
+        gesture.current = { x: event.clientX, y: event.clientY, position, current: position, down: true, dragged: false, axis: "" };
+      }}
+      onPointerMove={event => {
+        const g = gesture.current;
+        if (!g.down) return;
+        const dx = event.clientX - g.x, dy = event.clientY - g.y;
+        if (!g.axis && Math.max(Math.abs(dx), Math.abs(dy)) > 10) {
+          g.axis = Math.abs(dx) > Math.abs(dy) ? "x" : "y";
+          if (g.axis === "x") { event.currentTarget.setPointerCapture(event.pointerId); setDragging(true); }
+        }
+        if (g.axis !== "x") return;
+        g.dragged = true;
+        g.current = clamp(g.position - dx / 240, last);
+        setPosition(g.current);
+      }}
+      onPointerUp={finishDrag}
+      onPointerCancel={finishDrag}
+      onLostPointerCapture={finishDrag}>
       <div className="experience-orbit">
         {items.map((item, index) => {
           const distance = index - position;

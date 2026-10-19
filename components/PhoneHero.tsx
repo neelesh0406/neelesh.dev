@@ -44,8 +44,8 @@ export default function PhoneHero() {
       <ScrollFold />
       <PhoneDevice
         modelSrc="/models/iphone-duo.glb"
-        coverSrc="/phone/cover.svg"
-        screenSrc="/phone/inside.svg"
+        coverSrc="/phone/cover.png"
+        screenSrc="/phone/inside.png"
         rotation={-6}
         blur={10}
         parallax={0.2}

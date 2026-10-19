@@ -38,3 +38,8 @@
 @media(prefers-reduced-motion:reduce){.experience-introduced .experience-orbit,.experience-dialog[open]{animation:none}.experience-panel{transition:none}.experience-section{height:100vh}}
 
 .experience-location{font-size:12px;color:#eee;margin:-4px 0 10px;line-height:1.4}
+
+.experience-stage[data-dragging=true] .experience-panel{transition:none}
+.experience-stage[data-dragging=true] .experience-orbit{animation:none}
+@supports(height:100svh){.experience-section{height:180svh}.experience-sticky{height:100svh}}
+@media(prefers-reduced-motion:reduce){.experience-section{height:100svh}}
