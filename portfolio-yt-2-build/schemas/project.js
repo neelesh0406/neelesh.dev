@@ -3,6 +3,8 @@ export default {
     title: 'Project',
     type: 'document',
     fields: [
+        { name: "technologyLabels", title: "Project skill labels", description: "When supplied, these labels replace the linked skill badges on the project card.", type: "array", of: [{ type: "string" }] },
+        { name: "liveUrl", title: "Live demo URL", type: "url" },
         {
             name: "title",
             title: "Title",

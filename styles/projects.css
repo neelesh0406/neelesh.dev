@@ -1,0 +1,11 @@
+.projects-showcase{min-height:100vh;position:relative;isolation:isolate;padding:80px 0 60px;overflow:hidden;display:flex;flex-direction:column;justify-content:center}
+.projects-label{text-align:center;text-transform:uppercase;letter-spacing:.4em;font-size:18px;color:#aaa;margin-bottom:25px}
+.projects-track{display:grid;grid-auto-flow:column;grid-auto-columns:100%;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:thin;scrollbar-color:#f7ab0a #333;position:relative;z-index:1;align-items:start}
+.project-slide{scroll-snap-align:start;min-width:0;padding:0 32px 24px;display:flex;flex-direction:column;align-items:center;gap:20px}
+.project-preview{display:block;width:100%;max-width:760px;height:clamp(180px,30vh,350px);flex-shrink:0}.project-preview img{height:100%;width:100%;object-fit:contain}
+.project-copy{width:100%;max-width:760px;text-align:center}.project-number{font-size:10px;color:#ddd;letter-spacing:.12em;margin-bottom:10px}.project-copy h4{font-size:clamp(22px,2.4vw,32px);font-weight:600;line-height:1.25}.project-copy h4:hover{color:#f7ab0a}.project-technologies{display:flex;flex-wrap:wrap;justify-content:center;gap:7px;margin:16px 0}.project-technologies span{font-size:11px;border:1px solid #ffffff40;background:#24242480;padding:5px 9px;border-radius:5px}.project-summary{font-size:14px;line-height:1.7;color:#eee}.project-visit{display:inline-block;color:#f7ab0a;font-size:13px;margin-top:16px}
+.project-controls{display:flex;justify-content:center;align-items:center;gap:24px;margin:0 0 20px;font-size:12px;z-index:1}.project-controls button{height:38px;width:38px;border:1px solid #777;border-radius:50%;font-size:18px}.project-controls button:disabled{opacity:.3}.project-controls button:focus-visible,.projects-track:focus-visible{outline:2px solid #f7ab0a;outline-offset:3px}
+.project-accent{position:absolute;z-index:-1;top:35%;left:0;width:100%;height:55%;background:#f70a3729;transform:skewY(-12deg);pointer-events:none}
+@media(max-width:600px){.project-slide{padding:0 20px 20px}.projects-showcase{padding-top:75px}.projects-label{font-size:16px}.project-preview{height:200px}.project-summary{text-align:left}}
+
+.project-links{display:flex;gap:24px;justify-content:center;flex-wrap:wrap}

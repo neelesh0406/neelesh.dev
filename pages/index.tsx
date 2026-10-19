@@ -51,8 +51,8 @@ const Home = ({ pageInfo, experiences, skill, projects, socials }: Props) => {
         <ContactMe pageInfo={pageInfo} />
       </section>
 
-      <Link href="#hero">
-        <footer className="sticky bottom-5 w-full cursor-pointer">
+      <Link href="#hero" aria-label="Back to top">
+        <footer className="py-6 w-full cursor-pointer">
           <div className="flex items-center justify-center">
             <img
               className="h-10 w-10 rounded-full filter grayscale hover:grayscale-0 cursor-pointer"
