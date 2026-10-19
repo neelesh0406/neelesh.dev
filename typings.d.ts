@@ -55,6 +55,7 @@ export interface Social extends SanityBody {
 }
 
 export interface Experience extends SanityBody {
+  location?: string;
   _type: "experience";
   companyImage: Image;
   jobTitle: string;

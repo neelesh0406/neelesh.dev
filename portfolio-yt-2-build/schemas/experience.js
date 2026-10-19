@@ -3,6 +3,7 @@ export default {
     title: 'Experience',
     type: 'document',
     fields: [
+        { name: "location", title: "Location", type: "string" },
         {
             name: "jobTitle",
             title: "JobTitle",

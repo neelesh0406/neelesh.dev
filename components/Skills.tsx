@@ -1,30 +1,28 @@
-import React from "react";
-import { motion } from "framer-motion";
-import Skill from "./Skill";
+import { useState } from "react";
 import { Skill as SkillType } from "../typings";
+import { urlFor } from "../sanity";
+import { skillGroups } from "../content/skill-groups";
 
-type Props = {
-  skills: SkillType[];
-};
+const normalize = (value: string) => value.toLowerCase().replace(/[^a-z0-9]/g, "");
+function SkillLabel({ name, skill }: { name: string; skill?: SkillType }) {
+  const [failed, setFailed] = useState(false);
+  // The legacy JavaScript asset contains a Node.js mark; use its text label instead.
+  const logo = name !== "JavaScript" && skill?.image?.asset?._ref;
+  return <li className="skill-label">
+    {logo && !failed && <img src={urlFor(skill.image).width(64).height(64).fit("max").auto("format").url()} alt="" width={24} height={24} loading="lazy" onError={() => setFailed(true)} />}
+    <span>{name}</span>
+  </li>;
+}
 
-export default function Skills({ skills }: Props) {
-  return (
-    <div className="flex relative flex-col text-center md:text-left xl:flex-row max-w-[2000px] xl:px-10 min-h-screen justify-center xl:space-y-0 mx-auto items-center px-5 md:px-3">
-      <h3 className="absolute top-10 md:top-24 uppercase tracking-[20px] text-gray-500 text-2xl">
-        Skills
-      </h3>
-      <h3 className="absolute top-24 md:top-36 uppercase tracking-[3px] text-gray-500 text-sm">
-        Hover over a skill for current proficiency
-      </h3>
-      <div className="grid grid-cols-3 md:grid-cols-4 gap-5">
-        {skills?.slice(0, skills.length / 2).map((skill) => (
-          <Skill key={skill._id} skill={skill} />
-        ))}
-
-        {skills?.slice(skills.length / 2, skills.length).map((skill) => (
-          <Skill key={skill._id} skill={skill} directionLeft />
-        ))}
-      </div>
+export default function Skills({ skills }: { skills: SkillType[] }) {
+  return <div className="skills-section">
+    <header className="skills-heading"><h3>Skills</h3><h2>My development toolkit.</h2><p>The technologies I use to build, test, and ship.</p></header>
+    <div className="skills-categories">
+      {skillGroups.map((group, index) => <article className="skills-category" key={group.title}>
+        <div className="skills-category-heading"><span aria-hidden="true">{String(index + 1).padStart(2, "0")}</span><h4>{group.title}</h4></div>
+        <p>{group.description}</p>
+        <ul>{group.skills.map(name => <SkillLabel key={name} name={name} skill={skills.find(skill => normalize(skill.title) === normalize(name))} />)}</ul>
+      </article>)}
     </div>
-  );
+  </div>;
 }

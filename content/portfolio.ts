@@ -12,7 +12,7 @@ export const experience = [
     company: "Tenerity",
     logo: "/logos/tenerity.png",
     dates: "APR 2025 — AUG 2026",
-    role: "UI / Frontend Engineer",
+    role: "Senior Software Engineer - UI",
     domain: "REWARDS & FINTECH",
     intro:
       "Customer-facing portals and configuration tooling for a global B2B2C engagement platform.",
