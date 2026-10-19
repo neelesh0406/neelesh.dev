@@ -9,7 +9,7 @@
 .experience-orbit{position:relative;width:100%;height:100%;transform-style:preserve-3d}
 .experience-introduced .experience-orbit{animation:experience-intro 1.6s ease-in-out both}
 @keyframes experience-intro{0%,100%{transform:rotateY(0)}35%{transform:rotateY(-12deg)}70%{transform:rotateY(5deg)}}
-.experience-panel{position:absolute;left:50%;top:54%;width:clamp(280px,30vw,420px);height:76%;max-height:370px;text-align:left;background:#2c2c2c;border:1px solid #494949;border-radius:5px;overflow:hidden;backface-visibility:hidden;box-shadow:0 24px 45px #0003;transition:transform .16s ease-out,border-color .2s,opacity .2s;display:flex;flex-direction:column;color:#eee;cursor:pointer;user-select:none}
+.experience-panel{position:absolute;left:50%;top:54%;width:clamp(280px,30vw,420px);height:76%;max-height:370px;text-align:left;background:#2c2c2c;border:1px solid #494949;border-radius:5px;overflow:hidden;backface-visibility:hidden;box-shadow:0 24px 45px #0003;transition:border-color .2s,opacity .2s;display:flex;flex-direction:column;color:#eee;cursor:pointer;user-select:none}
 .experience-panel[data-active=true]{border-color:#a67a29}
 .experience-panel:focus-visible,.experience-controls button:focus-visible,.experience-close:focus-visible{outline:2px solid #f7ab0a;outline-offset:5px}
 .experience-panel-top{display:flex;justify-content:space-between;padding:16px 20px;color:#b1b1b1;font-size:10px;letter-spacing:.15em}

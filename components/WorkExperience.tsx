@@ -13,6 +13,7 @@ export default function WorkExperience({ experiences }: { experiences: Experienc
   const items = [...experiences].sort((a, b) => new Date(b.dateStarted).getTime() - new Date(a.dateStarted).getTime());
   const [position, setPosition] = useState(0);
   const [introduced, setIntroduced] = useState(false);
+  const [interacted, setInteracted] = useState(false);
   const [selected, setSelected] = useState<Experience | null>(null);
   const stage = useRef<HTMLDivElement>(null);
   const dialog = useRef<HTMLDialogElement>(null);
@@ -29,14 +30,19 @@ export default function WorkExperience({ experiences }: { experiences: Experienc
     const section = document.getElementById("experience");
     if (!root || !section) return;
     let frame = 0;
+    const previousSnap = root.style.scrollSnapType;
     const update = () => {
       frame = 0;
       const offset = root.getBoundingClientRect().top - section.getBoundingClientRect().top;
       const travel = Math.max(1, section.offsetHeight - root.clientHeight);
+      // Native section snapping otherwise pulls short vertical swipes back
+      // to the beginning of this pinned carousel.
+      root.style.scrollSnapType = offset >= -root.clientHeight * 0.35 && offset < section.offsetHeight
+        ? "none" : previousSnap;
       scrollPosition.current = clamp(offset / travel, 1) * last;
       if (gesture.current.axis !== "x") setPosition(clamp(scrollPosition.current + manualOffset.current, last));
     };
-    const schedule = () => { if (!frame) frame = requestAnimationFrame(update); };
+    const schedule = () => { setInteracted(true); if (!frame) frame = requestAnimationFrame(update); };
     const observer = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting) { setIntroduced(true); observer.disconnect(); }
     }, { root, threshold: 0.35 });
@@ -44,7 +50,7 @@ export default function WorkExperience({ experiences }: { experiences: Experienc
     update();
     root.addEventListener("scroll", schedule, { passive: true });
     window.addEventListener("resize", schedule);
-    return () => { cancelAnimationFrame(frame); observer.disconnect(); root.removeEventListener("scroll", schedule); window.removeEventListener("resize", schedule); };
+    return () => { root.style.scrollSnapType = previousSnap; cancelAnimationFrame(frame); observer.disconnect(); root.removeEventListener("scroll", schedule); window.removeEventListener("resize", schedule); };
   }, [last]);
 
   useEffect(() => {
@@ -65,7 +71,13 @@ export default function WorkExperience({ experiences }: { experiences: Experienc
     const g = gesture.current;
     if (!g.down) return;
     g.down = false;
-    if (g.dragged) goTo(Math.round(g.current));
+    if (g.dragged) {
+      const delta = g.current - g.position;
+      const next = Math.abs(delta) >= 0.15
+        ? Math.round(g.position) + (delta > 0 ? Math.ceil(delta) : Math.floor(delta))
+        : Math.round(g.position);
+      goTo(next);
+    }
     g.axis = "";
     setDragging(false);
     if (event.currentTarget.hasPointerCapture(event.pointerId)) event.currentTarget.releasePointerCapture(event.pointerId);
@@ -79,10 +91,11 @@ export default function WorkExperience({ experiences }: { experiences: Experienc
       <h2>Teams I’ve built with.</h2>
       <p>A few chapters of my engineering journey.</p>
     </div>
-    <div ref={stage} className={`experience-stage ${introduced ? "experience-introduced" : ""}`} role="region" aria-label="Career carousel" data-dragging={dragging}
+    <div ref={stage} className={`experience-stage ${introduced && !interacted ? "experience-introduced" : ""}`} role="region" aria-label="Career carousel" data-dragging={dragging}
       onKeyDown={event => { if (event.key === "ArrowRight" || event.key === "ArrowLeft") { event.preventDefault(); goTo(active + (event.key === "ArrowRight" ? 1 : -1)); } }}
       onPointerDown={event => {
         if (!event.isPrimary || event.button !== 0) return;
+        setInteracted(true);
         gesture.current = { x: event.clientX, y: event.clientY, position, current: position, down: true, dragged: false, axis: "" };
       }}
       onPointerMove={event => {
@@ -100,7 +113,9 @@ export default function WorkExperience({ experiences }: { experiences: Experienc
       }}
       onPointerUp={finishDrag}
       onPointerCancel={finishDrag}
-      onLostPointerCapture={finishDrag}>
+      // A child card loses its implicit touch capture when the stage takes
+      // over. That bubbling event must not finish the new stage gesture.
+      onLostPointerCapture={event => { if (event.target === event.currentTarget) finishDrag(event); }}>
       <div className="experience-orbit">
         {items.map((item, index) => {
           const distance = index - position;
